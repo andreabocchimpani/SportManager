@@ -70,9 +70,9 @@ namespace SportManager
 
         private void showAthletesList()
         {
-            Athlete[] athletesArray = MyLogic.getAllAthletes();
+            List<Athlete> athleteList = MyLogic.getAllAthletes();
 
-            foreach (Athlete atl in athletesArray)
+            foreach (Athlete atl in athleteList)
             {
                 Console.WriteLine(atl);
             }

@@ -15,10 +15,10 @@ namespace SportManager
             //MyPersitence = new PersistenceLayer();
             MyPersitence = persistence;
         }
-        public Athlete[] getAllAthletes()
+        public List<Athlete> getAllAthletes()
         {
-            Athlete[] athleteArray = MyPersitence.AllAthlete; //AllAthlete esiste in PersistenceLayer
-            return athleteArray;
+            List<Athlete> athleteList = MyPersitence.AllAthlete; //AllAthlete esiste in PersistenceLayer
+            return athleteList;
         }
 
         public void insertAthlete(Athlete athlete)

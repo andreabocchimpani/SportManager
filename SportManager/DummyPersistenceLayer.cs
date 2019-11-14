@@ -8,7 +8,7 @@ namespace SportManager
 {
     class DummyPersistenceLayer : IPersistence //implementiamo l interfaccia
     {
-        public Athlete[] AllAthlete { get; set; } //creazioe property da inserire in un array di tipo Athlete (atleti dentro sacco di atleti)
+        public List<Athlete> AllAthlete { get; set; } //creazioe property da inserire in un array di tipo Athlete (atleti dentro sacco di atleti)
 
         public DummyPersistenceLayer() //simulazione creaz. database
         {
@@ -20,7 +20,6 @@ namespace SportManager
             a1.Age = -19;
             a1.Sport = calcio;
 
-
             Athlete a2 = new AmateurAthlete("GG01371347019", "Giorgio", "Gori", Gender.Male, DateTime.Now, 25, 1.82, 89, pallavolo);
 
 
@@ -31,20 +30,12 @@ namespace SportManager
 
             Athlete pa2 = new ProAthlete("James", "Harden", 30, Gender.Male, "Adidas");
 
-
-
             pa2.Sport = tennis;
-
-
-
-
 
 
             Athlete aa1 = new AmateurAthlete("Giorgia", "Piccolini", 53, Gender.Female);
 
             aa1.Sport = pallavolo;
-
-
 
             JuniorAthlete ja1 = new JuniorAthlete("Carmelino", "James", 4, Gender.Male, "Pino James");
             ja1.Sport = calcio;
@@ -53,7 +44,7 @@ namespace SportManager
             Athlete ja2 = new JuniorAthlete("Guendalina", "Harden", 13, Gender.Female, "Anna Harden");
             ja2.Sport = tennis;
 
-            AllAthlete = new Athlete[] { a1, a2, pa1, pa2, aa1, ja1, ja2 }; //inser. elementi creati sopra
+            AllAthlete = new List<Athlete> { a1, a2, pa1, pa2, aa1, ja1, ja2 }; //inser. elementi creati sopra
         }
 
         public void SaveAthlete(Athlete a)
